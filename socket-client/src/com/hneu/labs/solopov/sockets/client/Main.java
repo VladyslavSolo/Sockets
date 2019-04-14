@@ -3,8 +3,6 @@ package com.hneu.labs.solopov.sockets.client;
 import com.hneu.labs.solopov.sockets.client.model.Client;
 import com.hneu.labs.solopov.sockets.client.service.ClientService;
 
-import java.io.IOException;
-
 /**
  * Socket project. Client side
  *
@@ -14,7 +12,7 @@ import java.io.IOException;
  */
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Client client = new ClientService().createClient();
         new MyClientSocket().connectToSocketServer(client);
     }

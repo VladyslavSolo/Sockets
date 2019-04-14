@@ -13,12 +13,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", id=" + id +
-                '}';
+        return this.getSurname() + " " + this.getName() + " " + this.getMiddleName();
     }
 
     public String getName() {

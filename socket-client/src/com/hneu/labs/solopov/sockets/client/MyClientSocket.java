@@ -26,21 +26,18 @@ class MyClientSocket {
         {
 
             try (Socket clientSocket = new Socket(InetAddress.getLocalHost().getHostName(), serverPort)) {
-
-                while (true) {
-                    InputStream inputStream = clientSocket.getInputStream();
+                 InputStream inputStream = clientSocket.getInputStream();
                     DataOutputStream dataOutputStream = new DataOutputStream(clientSocket.getOutputStream());
                     DataInputStream dataInputStream = new DataInputStream(inputStream);
 
 
-                    String clientDataLine = client.getSurname() + " " + client.getName() + " " + client.getMiddleName();
+                    String clientDataLine = client.toString();
                     System.out.println("Generated client data to send: " + clientDataLine);
                     System.out.println("Sending client data to the server...");
                     dataOutputStream.writeUTF(clientDataLine);
                     dataOutputStream.flush();
                     clientDataLine = dataInputStream.readUTF();
                     System.out.println("Get the generated data from the server: " + clientDataLine + '\n');
-                }
             } catch (IOException e) {
                 System.err.println(e.getMessage());
 
